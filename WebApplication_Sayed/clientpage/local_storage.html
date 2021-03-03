@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="../css/Style_Local_Storage.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-3.3.1.min.js"></script>
+    <script src="../Scripts/Scripts_Local_Storage.js"></script>
+</head>
+<body>
+
+    <div class="main">
+        <ul>
+            <li class="active">
+                <a href="home.html">Home</a>
+            </li>
+            <li>
+                <a href="web_sql.html">Web SQL</a>
+            </li>
+            <li>
+                <a href="indexed_db.html">Indexed DB</a>
+            </li>
+            <li>
+                <a href="local_storage.html">Local Storage</a>
+            </li>
+            <li>
+                <a href="sesson_storage.html">Sesson Storage</a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="container">
+        <header></header>
+        <hgroup id="headerText">
+            <h2 class="heading">Students Info </h2>
+        </hgroup>
+
+        <div role="main">
+            <div id="editContact">
+                <h2 id="currentAction"></h2>
+
+                <div class="form-control">
+                    <label for="firstName">First Name  </label>
+                    <input type="text" id="firstName" name="firstName" />
+                </div>
+                <div class="form-control">
+                    <label for="lastName">Last Name  </label>
+                    <input type="text" id="lastName" name="lastName" />
+                </div>
+                <div class="form-control">
+                    <label for="email">Email  </label>
+                    <input type="text" id="email" name="email" />
+                </div>
+                <div class="form-control">
+                    <label for="phoneNumber">Phone Number  </label>
+                    <input type="text" id="phoneNumber" name="phoneNumber" />
+                </div>
+                <div class="form-control">
+                    <label for="courses">Courses  </label>
+                    <select name="courses" id="courses" onchange="destination(this.value)">
+                        <option value="ESAD-CS">ESAD-CS</option>
+                        <option value="Web Design">Web Design</option>
+                        <option value="WADP">WADP</option>
+                        <option value="Python">Python</option>
+                    </select>
+                </div>
+                <div class="form-control">
+                    <label for="monthlyIncome">Monthly Income  </label>
+                    <select name="monthlyIncome" id="monthlyIncome">
+                        <option value="">None</option>
+                        <option value="7,500-15,000">7,500-15,000</option>
+                        <option value="15,500-35,000">15,500-35,000</option>
+                        <option value="35,500-70,000">35,500-70,000</option>
+                    </select>
+                </div>
+                <div class="form-control">
+                    <label for="birthDate">Birth of Date  </label>
+                    <input type="datetime-local" id="birthDate" name="birthDate" />
+                </div>
+  
+                <div>
+                    <label for="file">Upload File </label>
+                    <input type="file" id="files">
+
+                    <div id="list">
+                    </div>
+                </div>
+
+                <div>
+                    <button id="btnSave" name="save">Save</button>
+                </div>
+            </div>
+
+            <table id="contacts">
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Full Name</th>
+                        <th>Phone Number</th>
+                        <th>Courses</th>
+                        <th>Monthly Income</th>
+                        <th>Birth Date</th>
+                        <th>Upload File</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        var imagesObject = [];
+
+        function fileSelect(evt) {
+            var files = evt.target.files; 
+         
+            for (var i = 0, f; f = files[i]; i++) {
+                
+                if (!f.type.match('image.*')) {
+                    continue;
+                }
+                var reader = new FileReader();
+                
+                reader.onload = function (e) {
+                    displayImgData(e.target.result)
+                    contactImage(e.target.result);
+                };
+
+                reader.readAsDataURL(f);
+            }
+        }
+
+        function loadFromLocalStorage() {
+            var images = JSON.parse(localStorage.getItem("images"))
+
+            if (images && images.length > 0) {
+                imagesObject = images;
+
+                displayNumberOfImgs();
+                images.forEach(displayImgData);
+            }
+        }
+
+        function contactImage(imgData) {
+            imagesObject.push(imgData);
+            displayNumberOfImgs();
+            localStorage.setItem("images", JSON.stringify(imagesObject));
+        }
+
+        function displayImgData(imgData) {
+            var span = document.createElement('span');
+            span.innerHTML = '<img class="thumb" src="' + imgData + '"/>';
+            document.getElementById('list').insertBefore(span, null);
+        }
+
+        function displayNumberOfImgs() {
+            if (imagesObject.length > 0) {
+
+
+                document.getElementById("btnSave").style.display = "inline";
+
+            } else {
+                document.getElementById("list").style.display = "none";
+            }
+
+
+        }
+
+        function deleteImages() {
+            imagesObject = [];
+            localStorage.removeItem("images");
+            displayNumberOfImgs()
+            document.getElementById('list').innerHTML = "";
+        }
+
+        document.getElementById('files').addEventListener('change', fileSelect, false);
+        document.getElementById('btnSave').addEventListener('click', deleteImages);
+        loadFromLocalStorage();
+
+
+    </script>
+
+</body>
+</html>

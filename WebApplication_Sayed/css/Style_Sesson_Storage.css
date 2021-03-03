@@ -1,0 +1,206 @@
+﻿body {
+    background: lavender;
+    margin: 30px 50px;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Centaur Gothic;
+}
+
+header {
+    height: 4vh;
+    background-size: cover;
+    background-position: center;
+    background-color: chocolate;
+}
+
+ul {
+    float: right;
+    list-style-type: none;
+    margin-top: 35px;
+}
+
+    ul li {
+        display: inline-block;
+    }
+
+        ul li a {
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid #b0b2be;
+            padding: 5px 20px;
+            border: 1px solid transparent;
+            transition: 0.8s ease;
+            box-shadow: 0 1px 6px chocolate;
+            background-color: indigo;
+            grid-template-columns: repeat(10, 2fr);
+            padding: 0.6rem;
+        }
+
+            ul li a:hover {
+                background-color: white;
+                color: black;
+                background: 0 1px 5px rgba(104, 104, 104, 0.8);
+            }
+
+        ul li.active a {
+            background-color: white;
+            color: black;
+        }
+
+.logo img {
+    float: left;
+    width: 100px;
+    height: auto;
+}
+
+.main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+    .title h1 {
+        color: white;
+        font-size: 35px;
+    }
+
+
+@media (max-width: 700px) {
+
+    .main ul {
+        grid-template-columns: 2fr;
+    }
+}
+
+
+.container {
+    margin: 0 auto;
+    width: 1020px;
+    margin-bottom: 50px;
+}
+
+.heading {
+    font-size: 20px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    padding: 10px 0 0 0;
+    text-align: center;
+    border: 2px solid red;
+    border-radius: 5px;
+    background-color: lightcoral;
+}
+
+#editContact {
+    width: 55%;
+    background: #abd2d5;
+    margin: 0 auto;
+    margin-bottom: 35px;
+    padding: 30px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.editContact {
+    margin-bottom: 20px;
+}
+
+#editContact div {
+    width: 750px;
+    padding: 5px;
+}
+
+#editContact label {
+    display: inline-block;
+    width: 25%;
+    margin-right: 50px;
+}
+
+#editContact input,
+#editContact select {
+    width: 50%;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+
+#editContact label::after {
+    content: ":";
+    float: right;
+}
+
+#btnSave {
+    width: 150px;
+    height: 40px;
+    background-color: blue;
+    color: #fff;
+    border: 1px solid #2c3e50;
+    border-radius: 5px;
+    margin-left: 60%;
+    font-size: 16px;
+}
+    #btnSave:hover {
+    background-color:black;
+    color:yellow;
+    }
+
+#contacts {
+    width: 100%;
+}
+
+    #contacts caption {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    #contacts,
+    #contacts thead th,
+    #contacts tbody tr td {
+        border-collapse: collapse;
+        border: 1px solid #000;
+    }
+
+        #contacts thead th,
+        #contacts tbody tr td {
+            padding: 5px;
+        }
+
+        #contacts thead th {
+            background-color: burlywood;
+            color: #fff;
+        }
+
+        #contacts tbody tr:nth-child(even) {
+            background-color: #7f8c8d;
+            color: #fff;
+        }
+
+        #contacts .edit-icon {
+            border: none;
+            margin: 0;
+            padding: 5px;
+            border-radius: 2px;
+            float: left;
+            color: black;
+        }
+
+        #contacts .edit-icon {
+            margin-right: 10px;
+        }
+        
+        #contacts img,
+        #imageFile img {
+            width: 50px;
+            height: 50px;
+        }
+      

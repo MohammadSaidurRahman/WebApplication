@@ -1,0 +1,82 @@
+﻿
+body {
+    background:#d0e6eb;
+    margin: 30px 50px;
+}
+
+*{
+    margin:0px;
+    padding: 0px;
+    font-family: Centaur Gothic;
+}
+
+header {
+    background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('../img/Home_01.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+ul{
+    float: right;
+    list-style-type:none;
+    margin-top: 35px;
+}
+
+ul li{
+    display: inline-block;
+}
+
+    ul li a {
+        text-decoration: none;
+        color: #fff;
+        border: 1px solid #6554a3;
+        padding: 5px 20px;
+        border: 1px solid transparent;
+        transition: 0.8s ease;
+        box-shadow: 0 1px 6px #d0d7e0;
+        background-color: indigo;
+        grid-template-columns: repeat(10, 2fr);
+        padding: 0.7rem;
+    }
+        ul li a:hover {
+            background-color: white;
+            color: black;
+            background: 0 1px 5px rgba(104, 104, 104, 0.8);
+        }
+
+    ul li.active a {
+        background-color: white;
+        color: black;
+    }
+
+
+.main{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+}
+
+.title h1{
+    color: darkblue;
+    font-size: 35px;
+}
+    .title h3 {
+        color: white;
+        font-size: 25px;
+        border: 1px solid #fefefe;
+    }
+
+
+@media (max-width: 700px) {
+
+    .main ul {
+        grid-template-columns: 2fr;
+    }
+}

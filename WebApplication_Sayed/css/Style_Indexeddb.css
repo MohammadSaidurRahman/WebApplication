@@ -1,0 +1,207 @@
+﻿
+
+body {
+    background:#c6e9ef;
+    margin: 30px 50px;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Centaur Gothic;
+}
+
+header {    
+    height: 8vh;
+    background-size: cover;
+    background-position: center;
+    background-color:chocolate;
+}
+
+ul {
+    float: right;
+    list-style-type: none;
+    margin-top: 35px;
+}
+
+    ul li {
+        display: inline-block;
+    }
+
+        ul li a {
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid #d0d7e0;
+            padding: 5px 20px;
+            border: 1px solid transparent;
+            transition: 0.8s ease;
+            box-shadow: 0 1px 6px #7791c6;
+            background-color: darkslateblue;
+            grid-template-columns: repeat(10, 2fr);
+            padding: 0.6rem;
+        }
+
+            ul li a:hover {
+                background-color: white;
+                color: black;
+                background: 0 1px 5px rgba(104, 104, 104, 0.8);
+            }
+
+        ul li.active a {
+            background-color: white;
+            color: black;
+        }
+
+.logo img {
+    float: left;
+    width: 100px;
+    height: auto;
+}
+
+.mainForm {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+    .title h1 {
+        color: white;
+        font-size: 35px;
+    }
+
+
+@media (max-width: 700px) {
+
+    .mainForm ul {
+        grid-template-columns: 2fr;
+    }
+}
+
+
+
+aside, footer, header, hgroup, nav {
+    display: block;
+}
+
+#container {
+    margin-top: 20px;
+    padding-left: 100px;
+    background-color: plum;
+    margin-left: 20px;
+}
+
+
+
+div[role="main"] {
+    float: left;
+    width: 60%;
+}
+
+#editContact {
+    width: 90%;
+    background: #7791c6;
+    margin: 0 auto;
+    margin-bottom: 35px;
+    padding: 50px;
+    padding-left:50px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+    #editContact h2 {
+        padding-left: 20px;
+        margin-top: 10px;
+        font-size: 20px;
+        width: 200px;
+    }
+
+    #editContact div {
+        width: 350px;
+        padding: 10px;
+        padding-left: 30px;
+    }
+
+        #editContact div.buttons {
+            text-align: center;
+        }
+
+    #editContact label {
+        display: inline-block;
+        width: 30%;
+        margin-right: 50px;
+    }
+
+    #editContact input {
+        width: 150px;
+        padding: 2px;
+    }
+
+button {
+    width: 120px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 250px;
+    background-color: midnightblue;
+    color: white;
+}
+
+#contacts {
+    width: 100%;
+}
+
+    #contacts caption {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    #contacts,
+    #contacts thead th,
+    #contacts tbody tr td {
+        border-collapse: collapse;
+        border: 1px solid #000;
+    }
+
+        #contacts thead th,
+        #contacts tbody tr td {
+            padding: 5px;
+        }
+
+        #contacts thead th {
+            background-color: rebeccapurple;
+            color: #fff;
+        }
+
+        #contacts tbody tr:nth-child(even) {
+            background-color: #7f8c8d;
+            color: #fff;
+        }
+
+        #contacts .edit-icon,
+        #contacts .delete-icon {
+            border: none;
+            margin: 0;
+            padding: 5px;
+            border-radius: 2px;
+            float: left;
+            color: black;
+        }
+
+        #contacts .edit-icon {
+            margin-right: 10px;
+        }
+
+
+        #contacts img,
+        #imageFile img {
+            width: 50px;
+            height: 50px;
+        }
+      

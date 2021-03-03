@@ -1,0 +1,223 @@
+﻿body {
+    background: #b2c7e5 ;
+    margin: 30px 50px;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Centaur Gothic;
+}
+
+header {
+    height: 8vh;
+    background-size: cover;
+    background-position: center;
+    background-color:chocolate;
+}
+
+ul {
+    float: right;
+    list-style-type: none;
+    margin-top: 35px;
+}
+
+    ul li {
+        display: inline-block;
+    }
+
+        ul li a {
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid #d0d7e0;
+            padding: 5px 20px;
+            border: 1px solid transparent;
+            border-radius:5px;
+            transition: 0.8s ease;
+            box-shadow: 0 1px 6px rgba(179, 175, 179, 0.73);
+            background-color: midnightblue;
+            grid-template-columns: repeat(10, 2fr);
+            padding: 0.6rem;
+        }
+
+            ul li a:hover {
+                background-color: white;
+                color: black;
+                background: 0 1px 5px rgba(104, 104, 104, 0.8);
+            }
+
+        ul li.active a {
+            background-color: white;
+            color: black;
+        }
+
+.logo img {
+    float: left;
+    width: 100px;
+    height: auto;
+}
+
+.main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+    .title h1 {
+        color: white;
+        font-size: 35px;
+    }
+
+
+@media (max-width: 700px) {
+
+    .main ul {
+        grid-template-columns: 2fr;
+    }
+}
+
+.container {
+    margin: 0 auto;
+    width: 1020px;
+    margin-bottom: 50px;
+}
+
+.heading {
+    font-size: 25px;
+    margin-top:30px;
+    margin-bottom: 10px;
+    padding: 10px 0 0 0;
+    text-align: center;
+}
+
+#editContact {
+    width: 60%;
+    background:#d6e6ef;
+    margin: 0 auto;
+    margin-bottom: 35px;
+    padding: 30px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.editContact {
+    margin-bottom: 20px;
+}
+
+#editContact div {
+    width: 750px;
+    padding: 5px;
+}
+
+#editContact label {
+    display: inline-block;
+    width: 25%;
+    margin-right: 50px;
+}
+
+#editContact input,
+#editContact select {
+    width: 50%;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+    #editContact input[type="checkbox"],
+    #editContact input[type="radio"] {
+        width: 15px;
+        height: 15px;
+        margin: 0;
+        padding: 0;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    #editContact input[name="gender"]:first-of-type,
+    #editContact input[name="programeeList"]:first-of-type {
+        margin-left: 0;
+    }
+
+#editContact label::after {
+    content: ":";
+    float: right;
+}
+
+#btnSave {
+    width: 150px;
+    height: 40px;
+    background-color: darkblue;
+    color: #fff;
+    border: 1px solid #2c3e50;
+    border-radius: 5px;
+    margin-left: 60%;
+    font-size: 16px;
+}
+
+#contacts {
+    width: 100%;
+}
+
+    #contacts caption {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    #contacts,
+    #contacts thead th,
+    #contacts tbody tr td {
+        border-collapse: collapse;
+        border: 1px solid #000;
+    }
+
+        #contacts thead th,
+        #contacts tbody tr td {
+            padding: 5px;
+        }
+
+        #contacts thead th {
+            background-color: #2c3e50;
+            color: #fff;
+        }
+
+        #contacts tbody tr:nth-child(even) {
+            background-color: #7f8c8d;
+            color: #fff;
+        }
+
+        #contacts .edit-icon,
+        #contacts .delete-icon {
+            border: none;
+            margin: 0;
+            padding: 5px;
+            border-radius: 2px;
+            float: left;
+            color: black;
+        }
+
+        #contacts .edit-icon {
+            margin-right: 10px;
+        }
+
+        #contacts edit-icon {
+            color: #fff;
+            font-size: 10px;
+        }
+
+        #contacts .edit-icon:hover {
+            background: #2c3e50;
+            color: #fff;
+            cursor: pointer;
+        }
+        #contacts img,
+        #imageFile img {
+            width: 50px;
+            height: 50px;
+        }
